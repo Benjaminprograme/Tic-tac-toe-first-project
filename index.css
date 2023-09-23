@@ -1,0 +1,16 @@
+#Board{
+background-color: rgb(0, 0, 0);
+width: 300px;
+height: 300px;
+display: flex;
+flex-wrap: wrap;
+}
+
+.block{
+    
+    background-color: rgb(79, 79, 79);
+    width: 94px;
+    height: 94px;
+border-style: solid;
+    
+}
