@@ -12,5 +12,11 @@ flex-wrap: wrap;
     width: 94px;
     height: 94px;
 border-style: solid;
-    
+text-align: center;
+}
+
+.Symbol{
+   color: aliceblue;
+   margin-top: 50%;
+   font-size: xx-large;
 }
