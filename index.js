@@ -5,6 +5,12 @@ function ClearData() {
     var Symbols = document.getElementsByClassName("Symbol");
     for (var i = 0; i < Symbols.length; i++) {
       if (Symbols[i]) {
+        if(Playing=="X"){
+            alert("The winner is O")
+        }
+        else{
+            alert("The winner is X")
+        }
         Symbols[i].innerHTML = "";
         Table = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         
@@ -46,6 +52,8 @@ if(Table[4]!=null){
         }
     
     }
+    //Draw
+    
 }
 //Game
 function SybolPl(id) {

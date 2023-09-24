@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 <link rel="stylesheet" href="index.css">
  <title>Tic-tac-toe</title>
 </head>
 <body>
+    <h1>Tic-tac-toe Js</h1>
     <div id="PlayerNamesTab">
-        <input placeholder="Player 1" id="Player1">
-        <input placeholder="Player 2" id="Player2">
+        <input maxlength="8" type="text" placeholder="Player 1" id="Player1">
+        <p id="vs">vs</p>
+        <input maxlength="8" type="text" placeholder="Player 2" id="Player2">
     </div>
     <div id="Board">
         <div  class="block" onclick="SybolPl(1)"><p class="Symbol" id="1"></p></div>

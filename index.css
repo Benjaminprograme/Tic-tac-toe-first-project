@@ -1,22 +1,47 @@
+body{
+    background-color: #142d4c;
+}
 #Board{
-background-color: rgb(15, 15, 15);
-width: 300px;
+ width: 300px;
 height: 300px;
 display: flex;
 flex-wrap: wrap;
+margin: auto;
 }
 
 .block{
-    
-    background-color: rgb(79, 79, 79);
+    background-color:#9fd3c7;
     width: 94px;
     height: 94px;
 border-style: solid;
 text-align: center;
+border-color: #385170;
+}
+
+.block:hover{
+    background-color:#617f78;
+    width: 94px;
+    height: 94px;
+border-style: solid;
+text-align: center;
+border-color: #395374;
+opacity: 90%;
 }
 
 .Symbol{
    color: aliceblue;
    margin-top: 50%;
    font-size: xx-large;
+}
+
+input{
+    background-color:#ececec;
+    border-radius: 10px;
+    box-shadow: #0e2036;
+    
+}
+
+#vs{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline;
 }
