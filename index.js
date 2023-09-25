@@ -1,7 +1,6 @@
 function Start(){
     document.getElementById("Board").style.display="flex"
-    var el=document.getElementsByTagName("input");
-    el.setAttribute("readonly",true)
+   
 }
 
 //Gameplay
@@ -13,6 +12,7 @@ function ClearData() {
       if (Symbols[i]) {
        Table = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         Symbols[i].innerHTML = "";
+        document.getElementById("Board").style.display="none"
     }
     }
   }

@@ -45,4 +45,10 @@ input{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: inline;
 }
+#header{
+    color: azure;
+}
+#vs{
+    color: beige;
+}
 
