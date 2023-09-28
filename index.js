@@ -1,80 +1,70 @@
+//Starting the rounde
 function Start(){
-    document.getElementById("Board").style.display="flex"
-   
-}
-
+  document.getElementById("board").style.visibility="visible";
+  document.getElementById("startButton").style.visibility="hidden";
+ }
 //Gameplay
 //Block Data
-var Table = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let Table = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function ClearData() {
-    var Symbols = document.getElementsByClassName("Symbol");
-    for (var i = 0; i < Symbols.length; i++) {
-      if (Symbols[i]) {
-       Table = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        Symbols[i].innerHTML = "";
-        document.getElementById("Board").style.display="none"
-    }
-    }
+  let Symbols = document.getElementsByClassName("Symbol");
+  for (let i = 0; i < Symbols.length; i++) {
+    if (Symbols[i]) {
+     Table = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      Symbols[i].innerHTML = "";
+      document.getElementById("board").style.visibility="hidden"
+      document.getElementById("startButton").style.visibility="visible";
+      timesPlayed=0;
+      Win=0;
   }
-  
-
+  }
+  }
 //Player turns
-var Playing = "X";
+let activePlayer = "X";
+let timesPlayed=0;
 //Win draw logic
+var Win=0;
+function CheckSymbols(x,y,z){
+  if(Table[x]==Table[y] && Table[y]==Table[z]){
+   Win=1;
+  alert("The winner is "+ activePlayer)
+ClearData();
+  }
+}
+function CheckForDraw(){
+  if(timesPlayed==9 && Win!=1){
+  alert("Draw");
+ ClearData();
+ }
+  }
 function CheckForWin() {
 //Other combos
-if(Table[0]==Table[1] && Table[1]==Table[2]){
-    alert("The winner is "+ Playing)
-    ClearData()
-  }
-if(Table[0]==Table[3] && Table[3]==Table[6]){
-    alert("The winner is "+ Playing)
-    ClearData()
-}
-if(Table[2]==Table[5] && Table[5]==Table[8]){
-    alert("The winner is "+ Playing)
-    ClearData()
-}
-if(Table[6]==Table[7] && Table[7]==Table[8]){
-    alert("The winner is "+ Playing)
-    ClearData()
-}
-    //All the combos that contain 4
+CheckSymbols(0,1,2);
+CheckSymbols(0,3,6);
+CheckSymbols(2,5,8);
+CheckSymbols(6,7,8);
+//All the combos that contain 4
 if(Table[4]!=null){
-        if(Table[0]==Table[8] && Table[8]==Table[4]){
-            alert("The winner is "+ Playing)
-            ClearData()
-        }
-        if(Table[1]==Table[7] && Table[7]==Table[4]){
-            alert("The winner is "+ Playing)
-            ClearData()
-        }
-        if(Table[2]==Table[6] && Table[6]==Table[4]){
-            alert("The winner is "+ Playing)
-            ClearData()
-        }
-        if(Table[3]==Table[5] && Table[5]==Table[4]){
-            alert("The winner is "+ Playing)
-            ClearData()
-        }
-    
+  CheckSymbols(0,8,4);
+  CheckSymbols(1,7,4);
+  CheckSymbols(2,6,4);
+  CheckSymbols(3,5,4);
+  //Draw
+  CheckForDraw();
     }
-    //Draw
-    
-}
-//Game
-function SybolPl(id) {
-  if (Table[id - 1] !== "X" && Table[id - 1] !== "O") {
-    var Block = document.getElementById(id);
-    Block.innerHTML = Playing;
-    Table[id - 1] = Playing;
-    CheckForWin();
-    if (Playing == "X") {
-      Playing = "O";
-    } else {
-      Playing = "X";
-    }
+ }
+//Gameplay logic
+function SymbolPlace(id) {
+if (Table[id - 1] !== "X" && Table[id - 1] !== "O") {
+  let Block = document.getElementById(id);
+  Block.innerHTML = activePlayer;
+  Table[id - 1] = activePlayer;
+  timesPlayed+=1;
+  CheckForWin();
+  if (activePlayer == "X") {
+    activePlayer = "O";
+  } else {
+    activePlayer = "X";
   }
-  console.log(Table); //Testing
 }
-
+}
